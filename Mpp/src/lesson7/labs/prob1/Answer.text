@@ -1,0 +1,15 @@
+PartA:
+ArrayList extends from AbstractList and implement Serializable,Cloneable,Collection,Iterable,List,RandomAccess
+
+PartB:
+Employee do not override equals method correctly. Because List will call the equals method inherited from Object.
+
+PartC:
+Employee do not override hashCode method. Because HashMap will call the hashCode method inherited from Object.
+
+PartD:
+In removeDuplicates method, it changed an attribute in Employee, causing the hashcode changed.
+
+PartE:
+When D is a class, D must override the method.
+When D is an interface, D must override the method or declare it as an abstract method.
