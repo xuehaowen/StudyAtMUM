@@ -1,0 +1,55 @@
+Part 1:
+a.
+Functional Programming is thread-safe, Imperative Programming is not.
+FP is more compact than IP.
+FP is easier to test than IP.
+FP is easier to demonstrate correctness than IP.
+
+b.
+Declarative Programming makes method focused on what it can do instead of how to achieve the goal.
+Example:
+    BiFunction<Integer, Integer, Integer> f =
+    (x,y) -> 2 * x - y;
+
+    Class MyBiFunction implement BiFunction<Integer, Integer, Integer>{
+        public Integer apply(Integer x, Integer y){
+            return 2 * x * y;
+        }
+    }
+
+c.
+Functional interface only has one abstract method.
+Functor implement the functional interface.
+Closure is a functor embedded inside another class.
+public class EmployeeInfo{
+
+    class MyComparator implement Comparator<Employee>{
+        public int compare(Employee e1, Employee e2){
+            return e1.name.compareTo(e2.name);
+        }
+    }
+}
+
+d.
+Same with question a.
+
+e.
+i.      f(x) = x + 2x2  --->    λx.x+2x2
+ii.     g(x,y) = y – x + xy --->    λxy.y-x+xy
+iii.    h(x,y,z) = z – (x + y)  --->    λxyz.z-(x+y)
+
+f.
+i.      parameters: null; free variables: s,t
+ii.     parameters: u, v; free variables: a, b, d, x
+iii.    parameters: s, t; free variables: ignoreCase
+
+g.
+Interface Function<T,R>
+
+h.
+i.  x -> System.out.println(x);
+ii. object::instanceMethod
+
+j.
+i.      Supplier<Double> f = x -> Math.random(x);
+

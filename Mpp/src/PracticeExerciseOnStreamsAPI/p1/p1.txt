@@ -1,0 +1,13 @@
+The problems to solve are in package named, pipeline, in startup-code folder.
+
+The classes you will query, like Employee and Address, are all contained
+in the quizclasses package. Test data is created in the two "test data"
+classes in that package -- to get test data, call either getList (on EmployeeTestData)
+or getTransactions (on TraderTransactTestData).
+
+In the pipeline package, there is a file named, Main.java. It contains 4 problems in the form
+of methods prob1(), prob2(), prob3(). Each needs to be solved with
+a stream pipeline; instructions for each are in the comments for each.
+
+When you run the main method, it will run the Prob0 and then
+execute prob1(), prob2(), prob3().

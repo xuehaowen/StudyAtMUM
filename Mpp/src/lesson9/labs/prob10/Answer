@@ -1,0 +1,10 @@
+part a:
+print 1 without error.
+
+part b:
+stringStream.sorted((s1, s2) -> s1.compareTo(s2)).collect(Collectors.toList());
+
+part c:
+myIntStream.collect(Collectors.summarizingInt(x -> x.intValue()));
+System.out.println(summary.getMax());
+System.out.println(summary.getMin());

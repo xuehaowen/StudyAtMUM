@@ -1,0 +1,17 @@
+Part 1: pseudo code for f.
+int f(x)
+{   return (x == 4 || x == 3) ? x : 0;  }
+
+Part 2: pseudo code for g.
+int g(x)
+{
+    if(x == 0 || y == 3) return y;
+    return x;
+}
+
+Part 3: Specification of initial value.
+initial value = 0;
+
+Part 4: Interpretation of final value.
+4:  not nice;
+0,3:    nice;

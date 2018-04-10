@@ -1,0 +1,1 @@
+EmployeeNameComparator only compares the name, but equals compares the salary.
