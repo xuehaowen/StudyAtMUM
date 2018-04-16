@@ -1,5 +1,5 @@
-#Setup
-#VM or VMBox or Docker
+# Setup
+VM or VMBox or Docker
 
 # fetch the docker image
 docker pull cloudera/quickstart:latest
@@ -14,10 +14,10 @@ docker run --hostname=quickstart.cloudera
   cloudera/quickstart 
   /usr/bin/docker-quickstart
   
-#put jar on hdfs
+# put jar on hdfs
 docker cp .\WordCount.jar [containerId]:/wc.jar
 
-#create new file and directory
+# create new file and directory
 sudo su hdfs
 hadoop fs -mkdir /user/cloudera
 hadoop fs -chown cloudera /user/cloudera
@@ -33,10 +33,10 @@ echo "Hadoop is as yellow as can be" > file1
 echo "Oh what a yellow fellow is Hadoop" > file2
 hadoop fs -put file* /user/cloudera/wordcount/input
 
-#run jar 
-#Linux    arg0:input, arg1:output
-#Window   arg0:packageName, arg1:input, arg2:output
-hadoop jar wc.jar wc.WordCount /user/cloudera/wordcount/input /user/cloudera/wordcount/output
+# run jar 
+Linux    arg0:input, arg1:output
+Window   arg0:packageName, arg1:input, arg2:output
+hadoop jar wc.jar org.myTest.WordCount /user/cloudera/wordcount/input /user/cloudera/wordcount/output
 
 # check the output
 hadoop fs -cat /user/cloudera/wordcount/output/*
