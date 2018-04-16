@@ -13,9 +13,6 @@ docker run --hostname=quickstart.cloudera
   -p 8088:8088 
   cloudera/quickstart 
   /usr/bin/docker-quickstart
-  
-# put jar on hdfs
-docker cp .\WordCount.jar [containerId]:/wc.jar
 
 # create new file and directory
 sudo su hdfs
@@ -33,9 +30,8 @@ echo "Hadoop is as yellow as can be" > file1
 echo "Oh what a yellow fellow is Hadoop" > file2
 hadoop fs -put file* /user/cloudera/wordcount/input
 
-# run jar 
-Linux    arg0:input, arg1:output
-Window   arg0:packageName, arg1:input, arg2:output
+# put jar on hdfs and run jar
+docker cp .\WordCount.jar [containerId]:/wc.jar
 hadoop jar wc.jar org.myTest.WordCount /user/cloudera/wordcount/input /user/cloudera/wordcount/output
 
 # check the output
