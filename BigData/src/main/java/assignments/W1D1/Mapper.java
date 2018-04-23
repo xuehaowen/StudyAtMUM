@@ -50,7 +50,7 @@ public class Mapper {
 //            br.lines().flatMap(s -> Stream.of(s.split(" ")))
 //                    .map(String::toLowerCase)
 //                    .filter(s -> s.matches("[a-z]+"))
-//                    .map(s -> new Pair(s, 1))
+//                    .map(s -> new StringIntPair(s, 1))
 //                    .sorted(Comparator.comparing(p -> p.getKey().toString()))
 //                    .forEach(System.out::println);
 //        } catch (Exception e) {
