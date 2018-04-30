@@ -24,6 +24,7 @@ public class HybirdFrequency {
 		private HashMap<StringPair, Integer> map;
 		private Text t1;
 		private Text t2;
+
 		@Override
 		protected void setup(Mapper<LongWritable, Text, StringPair, FloatWritable>.Context context)
 				throws IOException, InterruptedException {
@@ -31,6 +32,7 @@ public class HybirdFrequency {
 			map = new HashMap<>();
 			super.setup(context);
 		}
+
 		@Override
 		public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 			String line = value.toString();
@@ -53,6 +55,7 @@ public class HybirdFrequency {
 				}
 			}
 		}
+
 		@Override
 		protected void cleanup(Mapper<LongWritable, Text, StringPair, FloatWritable>.Context context)
 				throws IOException, InterruptedException {
@@ -68,6 +71,7 @@ public class HybirdFrequency {
 	public static class Reduce extends Reducer<StringPair, FloatWritable, Text, MyMapWritable> {
 		private Text prev;
 		private MyMapWritable map;
+
 		@Override
 		protected void setup(Reducer<StringPair, FloatWritable, Text, MyMapWritable>.Context context)
 				throws IOException, InterruptedException {
@@ -76,10 +80,10 @@ public class HybirdFrequency {
 			map = new MyMapWritable();
 			super.setup(context);
 		}
+
 		@Override
 		public void reduce(StringPair key, Iterable<FloatWritable> values, Context context)
-				throws IOException, InterruptedException
-		{
+				throws IOException, InterruptedException {
 			Text keyText = new Text(key.getKey());
 			Text keyValue = new Text(key.getValue());
 			if (!keyText.equals(prev) && prev != null) {
@@ -93,7 +97,7 @@ public class HybirdFrequency {
 				}
 				context.write(prev, map);
 				map.clear();
-				
+
 			}
 			float sum = 0;
 			for (FloatWritable val : values) {

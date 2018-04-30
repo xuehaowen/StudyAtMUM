@@ -9,36 +9,36 @@ import java.util.Map;
 
 public class Mapper {
 
-    private List<Pair> pairList;
-    private String input;
-    private Map<String, Integer> map;
+	private List<Pair> pairList;
+	private String input;
+	private Map<String, Integer> map;
 
-    public String getInput() {
-        return input;
-    }
+	public String getInput() {
+		return input;
+	}
 
-    public Mapper(String input) {
-        this.pairList = new ArrayList<>();
-        this.input = input;
-        this.map = new HashMap<>();
-    }
+	public Mapper(String input) {
+		this.pairList = new ArrayList<>();
+		this.input = input;
+		this.map = new HashMap<>();
+	}
 
-    public void run(){
-        for(String s : input.split(" ")){
-            if(map.containsKey(s)){
-                int sum = map.get(s);
-                sum += 1;
-                map.put(s, sum);
-            }else {
-                map.put(s, 1);
-            }
-        }
-        for (String s : map.keySet()){
-            pairList.add(new Pair(s,map.get(s).intValue()));
-        }
-    }
+	public void run() {
+		for (String s : input.split(" ")) {
+			if (map.containsKey(s)) {
+				int sum = map.get(s);
+				sum += 1;
+				map.put(s, sum);
+			} else {
+				map.put(s, 1);
+			}
+		}
+		for (String s : map.keySet()) {
+			pairList.add(new Pair(s, map.get(s).intValue()));
+		}
+	}
 
-    public List<Pair> getPairList() {
-        return pairList;
-    }
+	public List<Pair> getPairList() {
+		return pairList;
+	}
 }

@@ -48,6 +48,7 @@ public class PairsFrequency {
 
 		private float num;
 		private Text text;
+
 		@Override
 		protected void setup(Reducer<StringPair, FloatWritable, StringPair, FloatWritable>.Context context)
 				throws IOException, InterruptedException {
@@ -66,7 +67,7 @@ public class PairsFrequency {
 			for (FloatWritable val : values) {
 				sum += val.get();
 			}
-			if(text.equals(key.getValue())) {
+			if (text.equals(key.getValue())) {
 				num = sum;
 			} else {
 				context.write(key, new FloatWritable(sum / num));

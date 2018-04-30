@@ -20,7 +20,6 @@ import java.util.StringTokenizer;
 public class InMapperWordCount {
 	public static class Map extends Mapper<LongWritable, Text, Text, IntWritable> {
 
-		private final static IntWritable one = new IntWritable(1);
 		private HashMap<String, IntWritable> map;
 
 		@Override
@@ -40,7 +39,7 @@ public class InMapperWordCount {
 					int num = map.get(word).get() + 1;
 					map.get(word).set(num);
 				} else {
-					map.put(word, one);
+					map.put(word, new IntWritable(1));
 				}
 			}
 		}

@@ -56,19 +56,19 @@ public class StripesFrequency {
 		{
 			MyMapWritable map = new MyMapWritable();
 			float num = 0;
-			for(MyMapWritable val : values) {
-				for(Writable w : val.keySet()) {
+			for (MyMapWritable val : values) {
+				for (Writable w : val.keySet()) {
 					float num1 = Float.valueOf(val.get(w).toString());
 					num += num1;
-					if(map.containsKey(w)) {
+					if (map.containsKey(w)) {
 						float num2 = Float.valueOf(map.get(w).toString());
 						map.put(w, new FloatWritable(num1 + num2));
-					}else {
+					} else {
 						map.put(w, val.get(w));
 					}
 				}
 			}
-			for(Writable w : map.keySet()) {
+			for (Writable w : map.keySet()) {
 				float sum = Float.valueOf(map.get(w).toString());
 				map.put(w, new FloatWritable(sum / num));
 			}

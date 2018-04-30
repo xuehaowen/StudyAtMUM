@@ -63,7 +63,6 @@ public class InMapperStripesFrequency {
 				} else {
 					bigMap.put(t1, map);
 				}
-				
 
 			}
 
@@ -73,7 +72,7 @@ public class InMapperStripesFrequency {
 		protected void cleanup(Mapper<LongWritable, Text, Text, MyMapWritable>.Context context)
 				throws IOException, InterruptedException {
 			// TODO Auto-generated method stub
-			for(Text key : bigMap.keySet()) {
+			for (Text key : bigMap.keySet()) {
 				context.write(key, bigMap.get(key));
 			}
 			super.cleanup(context);

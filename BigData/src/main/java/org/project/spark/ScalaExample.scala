@@ -13,7 +13,7 @@ object ScalaExample extends App {
   case class BRY(breaks: Int, wool: String, tension: String)
 
   override def main(args: Array[String]) {
-//    System.setProperty("hadoop.home.dir", "c://winutil//")
+    //    System.setProperty("hadoop.home.dir", "c://winutil//")
     val conf = new SparkConf().setAppName("ScalaExample").setMaster("local[2]")
     val sc = new SparkContext(conf)
     val sqlContext = new SQLContext(sc)
@@ -25,7 +25,7 @@ object ScalaExample extends App {
     val population = data.map(d => BRY(d(1).toInt, d(2), d(3))).toDF()
     //    var avgData = population.groupBy("tension").agg(avg("breaks"), variance("breaks"))
     var sample = population.sample(false, 0.25)
-
+    
     val sum = (1 to 10)
       .map(x => sample.sample(true, 1).groupBy("tension").agg(avg("breaks"), variance("breaks")).rdd)
       .reduce(_ union _).filter(row => !row(2).toString().equals("NaN"))

@@ -7,25 +7,25 @@ import java.util.List;
 
 public class Mapper {
 
-    private List<Pair> pairList;
-    private String input;
+	private List<Pair> pairList;
+	private String input;
 
-    public String getInput() {
-        return input;
-    }
+	public String getInput() {
+		return input;
+	}
 
-    public Mapper(String input) {
-        this.input = input;
-    }
+	public Mapper(String input) {
+		this.input = input;
+	}
 
-    public void run(){
-        pairList = new ArrayList<>();
-        for(String s : input.split(" ")){
-            pairList.add(new Pair(s,1));
-        }
-    }
+	public void run() {
+		pairList = new ArrayList<>();
+		for (String s : input.split(" ")) {
+			pairList.add(new Pair(s, 1));
+		}
+	}
 
-    public List<Pair> getPairList() {
-        return pairList;
-    }
+	public List<Pair> getPairList() {
+		return pairList;
+	}
 }
