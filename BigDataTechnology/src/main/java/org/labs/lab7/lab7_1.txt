@@ -1,0 +1,12 @@
+mysql -u root -p
+use cs523;
+
+create table stocks (id int not null primary key auto_increment, symbol varchar(10), quote_date date, open_price float(6,2), high_price float(6,2), low_price float(6,2));
+
+insert into stocks values (1,'AAPL','2009-01-02',85.88,91.04,85.16), (2,'AAPL','2008-01-02',199.27,200.26,192.55), (3,'AAPL','2007-01-02',86.29,86.58,81.9);
+
+sqoop import --connect jdbc:mysql://quickstart.cloudera/cs523 -username root -password cloudera --table stocks --target-dir=/user/cloudera/sqoopImportOutput --columns id,symbol,open_price --mysql-delimiters -m 1
+
+1,AAPL,85.88
+2,AAPL,199.27
+3,AAPL,86.29

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="labs">
+    <archive path="F:/MyGit/StudyAtMUM/Mpp/build/classes/lesson4/labs/labs.zip" />
+  </library>
+  <library name="labs1">
+    <archive path="F:/MyGit/StudyAtMUM/Mpp/src/lesson4/labs/labs.zip" />
+  </library>
+  <library name="labs2">
+    <archive path="F:/MyGit/StudyAtMUM/Mpp/src/lesson5/labs/labs.zip" />
+  </library>
+  <library name="labs3">
+    <archive path="F:/MyGit/StudyAtMUM/Mpp/build/classes/lesson6/labs/labs.zip" />
+  </library>
+  <library name="labs4" />
+  <library name="labs5">
+    <archive path="F:/MyGit/StudyAtMUM/Mpp/build/classes/lesson3/labs.zip" />
+  </library>
+  <library name="labs6">
+    <archive path="F:/MyGit/StudyAtMUM/Mpp/src/lesson6/labs/labs.zip" />
+  </library>
+  <library name="lecture">
+    <archive path="F:/MyGit/StudyAtMUM/Mpp/build/classes/lesson4/lecture/earlybinding.zip" />
+    <archive path="F:/MyGit/StudyAtMUM/Mpp/build/classes/lesson4/lecture/openclosed.zip" />
+    <archive path="F:/MyGit/StudyAtMUM/Mpp/build/classes/lesson4/lecture/template.zip" />
+  </library>
+  <library name="lecture1" />
+</eclipse-userlibraries>
+

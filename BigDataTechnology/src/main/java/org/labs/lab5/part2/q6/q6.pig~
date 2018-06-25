@@ -1,0 +1,14 @@
+register '/usr/lib/pig/piggybank.jar'
+movieDS = LOAD '/user/cloudera/lab5/movies.csv' USING PigStorage (',') AS (movieid:int,title:chararray,genres:chararray);
+ratingDS = LOAD '/user/cloudera/lab5/rating.txt' AS (userid:int,movieid:int,rating:int,timestamp:long);
+ratingTmp1 = FILTER ratingDS BY rating == 5;
+ratingTmp2 = FOREACH ratingTmp1 GENERATE movieid,rating;
+ratings = DISTINCT ratingTmp2;
+movies = FILTER movieDS BY ($2 matches '.*Adventure.*');
+movieAndRatings = JOIN ratings BY $0, movies BY $0;
+orderedMovieAndRatings = ORDER movieAndRatings BY $0;
+limitOrderedMovieAndRatings = LIMIT orderedMovieAndRatings 20;
+result = FOREACH limitOrderedMovieAndRatings GENERATE $0 AS MovieId,'Advanture' AS Genre, $1 AS Rating, $3 AS Title;
+STORE result into '/user/cloudera/lab5/q6output'  USING org.apache.pig.piggybank.storage.CSVExcelStorage(',','NO_MULTILINE','UNIX','WRITE_OUTPUT_HEADER');
+
+

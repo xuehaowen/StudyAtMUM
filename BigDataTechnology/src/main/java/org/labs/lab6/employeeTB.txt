@@ -1,0 +1,68 @@
+/*
+OpenCSV Serde
+	handle with standard format
+*/
+	/*
+	drop table employee;
+	CREATE EXTERNAL TABLE employee (
+	name STRING,
+	title STRING,
+	dept STRING,
+	jobType STRING,
+	salType STRING,
+	hours STRING,
+	salary STRING,
+	hourly STRING
+	)
+	row format serde 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+	stored as textfile
+	TBLPROPERTIES (
+	    'serialization.null.format' = '',
+	    'skip.header.line.count' = '1'
+	);
+	LOAD DATA  LOCAL INPATH '/home/cloudera/Downloads/employee.csv' INTO TABLE employee;
+	select * from employee limit 5;
+	*/
+
+/*
+Regex SerDe
+	custom modify
+	better way
+*/
+drop table employee;
+CREATE EXTERNAL TABLE employee (
+name STRING,
+title STRING,
+dept STRING,
+jobType STRING,
+salType STRING,
+hours INT,
+salary FLOAT,
+hourly FLOAT
+)
+row format serde 'org.apache.hadoop.hive.serde2.RegexSerDe'
+WITH SERDEPROPERTIES (
+  "input.regex" = "\"([^\"]*)\",([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),[$]?([^,]*),[$]?([^\"]*)"
+)
+STORED AS TEXTFILE
+TBLPROPERTIES (
+    'serialization.null.format' = '',
+    'skip.header.line.count' = '1'
+);
+LOAD DATA  LOCAL INPATH '/home/cloudera/Downloads/employee.csv' INTO TABLE employee;
+select * from employee limit 5;
+
+insert overwrite directory '/user/cloudera/lab6'
+row format delimited 
+FIELDS TERMINATED BY '\t'
+select dept,MAX(salary) from employee group by dept limit 10;
+
+insert overwrite directory '/user/cloudera/lab6'
+row format delimited 
+FIELDS TERMINATED BY '\t'
+select dept,COUNT(*) from employee group by dept limit 10;
+
+insert overwrite directory '/user/cloudera/lab6'
+row format delimited 
+FIELDS TERMINATED BY '\t'
+select * from employee where jobType = 'F' and salType = 'Salary' order by salary desc limit 10;

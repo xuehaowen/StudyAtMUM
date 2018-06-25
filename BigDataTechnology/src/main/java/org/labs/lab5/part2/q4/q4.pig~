@@ -1,0 +1,11 @@
+movieDS = LOAD '/user/cloudera/lab5/movies.csv' USING PigStorage (',') AS (movieid:int,title:chararray,genres:chararray);
+ratingDS = LOAD '/user/cloudera/lab5/rating.txt' AS (userid:int,movieid:int,rating:int,timestamp:long);
+filteredRating = FILTER ratingDS BY rating == 5;
+a = FOREACH filteredRating GENERATE movieid,rating;
+b = DISTINCT a;
+c = FILTER movieDS BY ($2 matches '.*Adventure.*');
+d = JOIN b BY $0, c BY $0;
+e = ORDER d BY $0;
+f = LIMIT e 20;
+result = FOREACH f GENERATE $0,'Advanture',$1,$3;
+STORE result into '/user/cloudera/lab5/q4output';
