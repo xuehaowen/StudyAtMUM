@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <pre>
+1.
+	1st will invoke the function after 2 sec
+	2nd will invoke the function immediately
+2.
+	an alert with "6".
+3.
+	function booyah1(){
+		alert("BOOYAH!");
+	}
+	function booyah2(){
+		setTimeout(function(){
+			alert("BOOYAH!");
+		}, 2000);
+	}
+4.
+	Separation content of html,css and javascript.
+	
+	&lt;html&gt;
+		...
+		&lt;body&gt;
+			&lt;input id="btn_MK" type="button" value="Malkovitch" /&gt;
+		&lt;/body&gt;
+	&lt;/html&gt;
+	
+	window.onload = function () {
+		document.getElementById('btn_MK').onclick = malkovich;
+	}
+	
+	Better for group work, one can focus on html, another one can focus on js or css.
+	More safe, hide the function and logic to clients.
+	More flexible, we can make it dynamic.
+            </pre>
+        </div>
+    </body>
+</html>

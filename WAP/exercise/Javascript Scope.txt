@@ -1,0 +1,35 @@
+1.
+	10,8,8,9,10,1
+2.
+	function can be declared alone
+	method is a function declared inside of an object
+3.
+	java: it refers to the instance
+4.
+	javascript: it refers to the object which contains the method
+5.
+	It refers to the prototype of the object
+6.
+	It refers to x
+7.
+	not one of its parameters or local variables
+8.
+	var obj = function(){
+		var name = "fred";
+		var major="music";
+		var smallest = function(a,b){
+			if(a>b)
+				return b;
+			else if(a <b)
+				return a;
+			else
+				return a*a;
+		};
+	}
+9.
+	function Employee(name,salary,position){
+		this.name = name;
+		this.salary = salary;
+		this.position = position;
+	}	
+	var emp = new Employee('bob',3000,'engineer');

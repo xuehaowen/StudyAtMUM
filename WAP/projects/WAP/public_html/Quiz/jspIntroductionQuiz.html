@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <pre>
+1.
+	Separate display from processing, separate html from java.
+2.
+	It will be compiled automatically into a servlet by the container.
+3.
+	The static part of a jsp file is copied directly to response html.
+4.
+	&lt;% count+=1; %&gt;
+5.
+	&lt;%! int count = 0; %&gt;
+6.
+	&lt;%-- comment --%&gt;
+7.
+	&lt;%= count++ %&gt;
+8.
+	&lt;%@ page import="java.util" %&gt;
+	
+&lt;html&gt;
+	&lt;body&gt;
+	&lt;%@ page import="java.util" %&gt;
+	&lt;%-- comment --%&gt;
+	&lt;%! int count = 0; %&gt;
+	&lt;% count+=1; %&gt;
+	&lt;%= count %&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+
+import java.util;			//directive
+public class jsp_servlet extends org.apache.jasper.runtime.HttpJspBase
+																impelement org.apache.jasper.runtime.JspSourceDependent{
+
+	int count = 0;			//declaration
+	public void _jspService(HttpServletRequest request,
+		HttpServletResponse response) throws java.io.IOException,ServletException{
+		PrinterWriter out = reponse.getWriter();
+		out.write("&lt;html&gt;&lt;body&gt;")
+		/** coment */			//comment
+		count+=1;					//scriptlet
+		out.print(count);	//expression
+		out.write("&lt;/body&gt;&lt;/html&gt;");
+	}
+}
+9.
+	It is transformed into JSP expression
+10.
+	page &gt; request &gt; session &gt; application &gt; ignore
+11.
+	Servlet can set an attribute into a request, and send the request to a jsp page.
+	So the jsp page can get the attribute.
+            </pre>
+        </div>
+    </body>
+</html>

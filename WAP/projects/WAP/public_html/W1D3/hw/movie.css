@@ -1,0 +1,114 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 30, 2018, 12:09:13 PM
+    Author     : toby_
+*/
+html{
+    margin: auto;
+    background-image: url('background.png');
+    font-family: Verdana, Tahoma,sans-serif;
+    font-size: 8pt;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+#div_banner{
+    background-image: url('bannerbg.png');
+}
+h1{
+    font-family:  Tahoma, Verdana,sans-serif;
+    font-size: 24pt;
+    font-weight: bold;
+    text-shadow: 3px 3px #999999;
+}
+#content{
+    margin: auto;
+    width: 800px;
+    border-radius: 20px;
+    border: gray solid 4px;
+    overflow: hidden;
+}
+#overall{
+    width: 550px;
+    float: left;
+    overflow: hidden;
+}
+#overall_top{
+    text-align: left;
+    background-image: url(rbg.png);
+    background-repeat: repeat-x;
+    font-size: 48pt;
+    color: red;
+    font-weight: bold;
+}
+#overall_top img{
+    vertical-align: sub;
+}
+.overall_sub{
+    width: 47%;
+    float: left;
+    margin: 1%;
+}
+.div_comment{
+    font-size: 8pt;
+    font-weight: bold;
+    background-color: #E8DC9B;
+    border: gray solid 2px;
+    border-radius: 10px;
+    padding: 8px;
+    text-align: left;
+    overflow: hidden;
+    clear: both;
+}
+.div_comment img{
+    float: left;
+    margin-right: 5px;
+}
+.div_critic{
+    margin-bottom: 20pt;
+    text-align: left;
+}
+.div_critic img{
+    float: left;
+    margin-right: 5px;
+}
+#overview{
+    width: 250px;
+    float: right;
+    background-color: #A2B964;
+    text-align: left;
+    
+}
+#overview dl{
+    font-family: Arial,sans-serif;
+    font-size: 8pt;
+    margin-left: 10pt;
+}
+#overview dt{
+    font-weight: bold;
+    margin-top: 10pt;
+}
+#overview ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#div_bottom{
+    clear: both;
+    background-color: #A2B964;
+    padding: 5px;
+}
+#div_validate{
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+}
+#div_validate img{
+    opacity: 0.5;
+}

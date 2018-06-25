@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+    <head>
+        <title>ASCIImation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="ascii.css" />
+        <script src="animations.js" ></script>
+        <script src="ascii.js" ></script>
+    </head>
+    <body>
+
+        <div class="body">
+            <div>
+                <h1>ASCII Animation Viewer</h1>
+                <textarea id="tA" cols="80" rows="20"></textarea>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>Play Controls</legend>
+                    <input id="btn_Start" type="button" value="Start" />
+                    <input id="btn_Stop" type="button" value="Stop" />
+                </fieldset>
+                <fieldset>
+                    <legend>Animation</legend>
+                    <select id="animation_name">
+                        <option value="Blank" selected>Blank</option>
+                        <option value="Exercise">Exercise</option>
+                        <option value="Juggler">Juggler</option>
+                        <option value="Bike">Bike</option>
+                        <option value="Dive">Dive</option>
+                        <option value="Custom">Custom</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Font Size</legend>
+                    <select id="font_size">
+                        <option value="7pt">Tiny</option>
+                        <option value="10pt">Small</option>
+                        <option value="12pt" selected>Medium</option>
+                        <option value="16pt">Large</option>
+                        <option value="24pt">Extra Large</option>
+                        <option value="32pt">XXL</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Speed</legend>
+                    <label><input id="cb_speed" type="checkbox" value="Turbo" />Turbo</label>
+                </fieldset>
+            </div>
+
+        </div>
+        <div id="footer">
+            <div>
+                <a href="https://webster.cs.washington.edu/validate-html.php">
+                    <img src="https://webster.cs.washington.edu/w3c-html.png" alt="Valid HTML" />
+                </a>
+            </div>
+            <div>
+                <a href="https://webster.cs.washington.edu/validate-css.php">
+                    <img src="https://webster.cs.washington.edu/w3c-css.png" alt="Valid CSS" />
+                </a>
+            </div>
+            <div>
+                <a href="https://webster.cs.washington.edu/jslint/?referer">
+                    <img src="https://webster.cs.washington.edu/w3c-js.png" alt="Valid JS" />
+                </a>
+            </div>
+
+        </div>
+
+    </body>
+</html>

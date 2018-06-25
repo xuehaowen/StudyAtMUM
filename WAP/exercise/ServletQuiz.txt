@@ -1,0 +1,43 @@
+Servlet Quiz
+1.
+	Web server can only handle static content
+	Web server interact with client
+	Web server can not save data on server
+	
+	Web container can handle dynamic content
+	Web container interact with web server
+	Web container provide support for JSP,EJB
+	
+2.
+	A servlet is a java class that extends capabilities of servers that host applications access by means of a request-response programming model
+	
+3.
+	When server recieves a request from a client, it will send it to container
+	container repacks the request,response into a http-request,http-response object and passes them to servlet
+	servlet returns the data to container after processing
+	container returns data to server
+	server responses to client
+	
+4.
+	Container
+	
+5.
+	Load: load servlet class
+	Create: instantiate servlet instance
+	Init:	call init methon only once
+	Service: call service methon everytime request comes in, each request runs in a thread
+	Destory: call destory methon only once
+	
+6.
+	Container
+	When servlet was created
+	
+7.
+	init,doGet
+	
+8.
+	Each request comes to servlet runs in a thread, so if server recieves multiple request from client
+	then the service methon can be called by multiple thread at the same time.
+	
+9.
+	All threads share servlet instance variables.

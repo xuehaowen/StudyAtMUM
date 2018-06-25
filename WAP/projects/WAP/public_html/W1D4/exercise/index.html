@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+    <head>
+        <title>Retrieve Grade</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Retrieve your grade</h1>
+        <form action="http://mumstudents.org/params.php">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><label>Name:</label></td>
+                        <td><input name="name" type="text" maxlength="16"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>Student ID:</label></td>
+                        <td><input name="id" type="text" maxlength="16"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>Assignment:</label></td>
+                        <td>
+                            <select name="assignment">
+                                <option selected>Asmt1</option>
+                                <option>Asmt2</option>
+                                <option>Asmt3</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Entry:</label></td>
+                        <td>
+                            <input name='entry' type="radio" value="Jan2018" checked/>Jan2018
+                            <input name='entry' type="radio" value="Feb2018" />Feb2018
+                            <input name='entry' type="radio" value="Apr2018" />Apr2018
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Confirm:</label></td>
+                        <td><input name='confirm' type="checkbox" />I'm really looking up my own grade</td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" value="Get Grade!"/>
+        </form>
+    </body>
+</html>

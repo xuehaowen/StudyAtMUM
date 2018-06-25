@@ -1,0 +1,139 @@
+1.
+	undefined889101
+2.
+	var x = 1;//global
+	function f(){
+		var y = 2;//local
+	}
+3.
+	a).no
+	b).yes
+	c).no
+	d).yes
+	e).yes
+4.
+	81 25
+5.
+	1
+6.
+	var count = (function () {
+		var counter = 0;
+		return {
+			add:function () {
+				return counter += 1;
+			},
+			reset:function(){
+				counter = 0;
+			}
+		} 
+	 })();
+7.
+	counter
+8.
+	var count = (function () {
+		var counter = 0;
+		return {
+			add:function () {
+				return counter += 1;
+			},
+			reset:function(){
+				counter = 0;
+			},
+			make_adder:function(inc){
+				return counter += inc;
+			}
+		} 
+	 })();
+9.
+	use module.
+	(function(){
+		//code
+	})();
+10.
+	var Employee = (function(){
+		var name;
+		var age;
+		var salary;
+		var getAge = function (){return age;};
+		var getName = function (){return name;};
+		var getSalary = function (){return salary};
+		var setAge = function (newAge){
+				this.age = newAge;
+		};
+		var setSalray=function (newSalary){
+				this.salary = newSalary;
+		};
+		var setName=function (newName){
+				this.name = newName;
+		};
+		var increaseSalary=function (percentage){
+			var newSalary = getSalary()*(1+percentage);
+			this.setSalray(newSalary);
+		};
+		var incrementAge=function (){
+				this.setAge(getAge()+1);
+		};
+		return {
+			setAge: setAge,
+			setSalray:setSalray,
+			setName: setName,
+			increaseSalary: increaseSalary,
+			incrementAge: incrementAge
+		};
+	})();
+11.
+	var Employee = (function(){
+		var name;
+		var age;
+		var salary;
+		var getAge = function (){return age;};
+		var getName = function (){return name;};
+		var getSalary = function (){return salary};
+		return {
+			setAge: function(newAge){
+				this.age = newAge;
+			},
+			setSalray: function(newSalary){
+				this.salary = newSalary;
+			},
+			setName: function(newName){
+				this.name = newName;
+			},
+			increaseSalary: function(percentage){
+				var newSalary = getSalary()*(1+percentage);
+				this.setSalray(newSalary);
+			},
+			incrementAge: function(){
+				this.setAge(getAge()+1);
+			}
+		};
+	})();
+12.
+	var Employee = (function(){
+		var name;
+		var age;
+		var salary;
+		var getAge = function (){return age;};
+		var getName = function (){return name;};
+		var getSalary = function (){return salary};
+		var object = {
+			setAge: function(newAge){
+				this.age = newAge;
+			},
+			setSalray: function(newSalary){
+				this.salary = newSalary;
+			},
+			setName: function(newName){
+				this.name = newName;
+			},
+			increaseSalary: function(percentage){
+				var newSalary = getSalary()*(1+percentage);
+				this.setSalray(newSalary);
+			},
+			incrementAge: function(){
+				this.setAge(getAge()+1);
+			}
+		};
+		return object;
+	})();
+13.

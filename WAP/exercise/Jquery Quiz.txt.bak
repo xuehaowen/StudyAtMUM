@@ -1,0 +1,7 @@
+1.
+	Jquery function:	refers to the global function/object or the $function on the context
+	Jquery object: the object returned by jquery function
+2.
+	$('div h1').css('background-color','red');
+3.
+	

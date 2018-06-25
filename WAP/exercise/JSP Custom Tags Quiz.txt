@@ -1,0 +1,24 @@
+1.
+	<table>
+		<% 	String[] items = (String[]) request.getAttribute("movie");
+				for(String var : items){ %>
+				<tr><td><%= var %></td></tr>
+		<%	} %>
+	</table>
+2.
+	a). Define a tag including attributes and body
+	b). Write a TLD
+	c). Write a tag handler class
+	d). Use it on a jsp page and link it to the descriptor
+3.
+	The uri is the unique identifier in the TLD as what you put in taglib directive, which tells container how to find it.
+4.
+	Tag handler class descide the action of the tag.
+5.
+	It allows user to set attribute for the tag.
+6.
+	Container will call it when the tag is used in jsp
+7.
+	It writes the content into html
+8.
+	Process the body of the tag and print it to the response.

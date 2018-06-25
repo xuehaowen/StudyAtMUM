@@ -1,0 +1,49 @@
+1.
+	Separate display from processing, separate html from java.
+2.
+	It will be compiled automatically into a servlet by the container.
+3.
+	The static part of a jsp file is copied directly to response html.
+4.
+	<% count+=1; %>
+5.
+	<%! int count = 0; %>
+6.
+	<%-- comment --%>
+7.
+	<%= count++ %>
+8.
+	<%@ page import="java.util" %>
+	
+<html>
+	<body>
+	<%@ page import="java.util" %>
+	<%-- comment --%>
+	<%! int count = 0; %>
+	<% count+=1; %>
+	<%= count %>
+	</body>
+</html>
+
+import java.util;			//directive
+public class jsp_servlet extends org.apache.jasper.runtime.HttpJspBase
+																impelement org.apache.jasper.runtime.JspSourceDependent{
+
+	int count = 0;			//declaration
+	public void _jspService(HttpServletRequest request,
+		HttpServletResponse response) throws java.io.IOException,ServletException{
+		PrinterWriter out = reponse.getWriter();
+		out.write("<html><body>")
+		/** coment */			//comment
+		count+=1;					//scriptlet
+		out.print(count);	//expression
+		out.write("</body></html>");
+	}
+}
+9.
+	It is transformed into JSP expression
+10.
+	page > request > session > application > ignore
+11.
+	Servlet can set an attribute into a request, and send the request to a jsp page.
+	So the jsp page can get the attribute.

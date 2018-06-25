@@ -1,0 +1,81 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 29, 2018, 3:41:47 PM
+    Author     : toby_
+*/
+html{
+    margin: auto;
+    height: 720px;
+    width: 1024px;
+    
+}
+body {
+    color: rgb(64,64,64);
+    font-family: Georgia,Garamond,serif;
+    font-size: 11pt;
+}
+body div{
+    background-image: url('silverware.jpg');
+    background-attachment: fixed;
+}
+a{
+    color: rgb(164,164,0);
+}
+h1 span,h2 span{
+    letter-spacing: 0.25em;
+    color: rgb(164,164,0);
+    background-color: rgb(240,240,240);
+    font-family: Lucida Sans Unicode, Helvetica, Arial,sans-serif;
+    text-decoration: underline;
+}
+h1{
+    text-align: center;
+    font-size: 22pt;
+    font-weight: bold;
+}
+h2{
+    text-align: left;
+    font-size: 18pt;
+    font-weight: normal;
+}
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+.div_comments p{
+    margin: 30px;
+    background-color: rgb(225,225,168);
+    font-style: italic;
+}
+ul{
+    list-style-image: url('pie_icon.gif');
+}
+.div_copyright{
+    text-align: right;
+}

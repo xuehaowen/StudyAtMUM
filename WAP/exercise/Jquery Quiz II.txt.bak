@@ -1,0 +1,7 @@
+1.
+	Yes, but the function is the parameter of each() methon,
+	so they have parameters of same type.
+2.
+	$("ul").parent().css("color","blue");
+3.
+	$("body").append("<div><h1>JQuery Core</h1></div>");
